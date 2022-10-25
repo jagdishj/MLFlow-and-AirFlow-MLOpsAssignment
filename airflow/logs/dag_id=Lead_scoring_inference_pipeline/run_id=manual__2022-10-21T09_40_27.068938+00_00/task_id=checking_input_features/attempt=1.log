@@ -1,0 +1,25 @@
+[2022-10-21 09:41:39,130] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: Lead_scoring_inference_pipeline.checking_input_features manual__2022-10-21T09:40:27.068938+00:00 [queued]>
+[2022-10-21 09:41:39,135] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: Lead_scoring_inference_pipeline.checking_input_features manual__2022-10-21T09:40:27.068938+00:00 [queued]>
+[2022-10-21 09:41:39,135] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-21 09:41:39,135] {taskinstance.py:1377} INFO - Starting attempt 1 of 2
+[2022-10-21 09:41:39,135] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-21 09:41:39,143] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): checking_input_features> on 2022-10-21 09:40:27.068938+00:00
+[2022-10-21 09:41:39,150] {standard_task_runner.py:52} INFO - Started process 1448 to run task
+[2022-10-21 09:41:39,156] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'Lead_scoring_inference_pipeline', 'checking_input_features', 'manual__2022-10-21T09:40:27.068938+00:00', '--job-id', '37', '--raw', '--subdir', 'DAGS_FOLDER/Lead_scoring_inference_pipeline/lead_scoring_inference_pipeline.py', '--cfg-path', '/tmp/tmp4av92yer', '--error-file', '/tmp/tmpgmv_2x8p']
+[2022-10-21 09:41:39,157] {standard_task_runner.py:80} INFO - Job 37: Subtask checking_input_features
+[2022-10-21 09:41:39,199] {task_command.py:371} INFO - Running <TaskInstance: Lead_scoring_inference_pipeline.checking_input_features manual__2022-10-21T09:40:27.068938+00:00 [running]> on host 1c4d0d77f535
+[2022-10-21 09:41:39,248] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=Lead_scoring_inference_pipeline
+AIRFLOW_CTX_TASK_ID=checking_input_features
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-21T09:40:27.068938+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-10-21T09:40:27.068938+00:00
+[2022-10-21 09:41:40,328] {logging_mixin.py:115} INFO - Data has been extracted successfully from lead_scoring_model_experimentation.
+[2022-10-21 09:41:40,328] {logging_mixin.py:115} INFO - Some of the models inputs are missing
+[2022-10-21 09:41:40,328] {python.py:173} INFO - Done. Returned value was: None
+[2022-10-21 09:41:40,334] {taskinstance.py:1415} INFO - Marking task as SUCCESS. dag_id=Lead_scoring_inference_pipeline, task_id=checking_input_features, execution_date=20221021T094027, start_date=20221021T094139, end_date=20221021T094140
+[2022-10-21 09:41:40,367] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-10-21 09:41:40,395] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,24 @@
+[2022-10-21 07:29:41,586] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: Lead_Scoring_Data_Engineering_Pipeline.checking_model_inputs_schema manual__2022-10-21T07:28:36.169214+00:00 [queued]>
+[2022-10-21 07:29:41,591] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: Lead_Scoring_Data_Engineering_Pipeline.checking_model_inputs_schema manual__2022-10-21T07:28:36.169214+00:00 [queued]>
+[2022-10-21 07:29:41,591] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-21 07:29:41,591] {taskinstance.py:1377} INFO - Starting attempt 1 of 2
+[2022-10-21 07:29:41,591] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-21 07:29:41,598] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): checking_model_inputs_schema> on 2022-10-21 07:28:36.169214+00:00
+[2022-10-21 07:29:41,602] {standard_task_runner.py:52} INFO - Started process 1474 to run task
+[2022-10-21 07:29:41,609] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'Lead_Scoring_Data_Engineering_Pipeline', 'checking_model_inputs_schema', 'manual__2022-10-21T07:28:36.169214+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/Lead_scoring_data_pipeline/.ipynb_checkpoints/lead_scoring_data_pipeline-checkpoint.py', '--cfg-path', '/tmp/tmpfs5lqf98', '--error-file', '/tmp/tmpu_srmrg7']
+[2022-10-21 07:29:41,611] {standard_task_runner.py:80} INFO - Job 10: Subtask checking_model_inputs_schema
+[2022-10-21 07:29:41,652] {task_command.py:371} INFO - Running <TaskInstance: Lead_Scoring_Data_Engineering_Pipeline.checking_model_inputs_schema manual__2022-10-21T07:28:36.169214+00:00 [running]> on host 53fb9ec0a08c
+[2022-10-21 07:29:41,701] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=Lead_Scoring_Data_Engineering_Pipeline
+AIRFLOW_CTX_TASK_ID=checking_model_inputs_schema
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-21T07:28:36.169214+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-10-21T07:28:36.169214+00:00
+[2022-10-21 07:29:42,771] {logging_mixin.py:115} INFO - Models input schema is NOT in line with the schema present in schema.py
+[2022-10-21 07:29:42,797] {python.py:173} INFO - Done. Returned value was: None
+[2022-10-21 07:29:42,803] {taskinstance.py:1415} INFO - Marking task as SUCCESS. dag_id=Lead_Scoring_Data_Engineering_Pipeline, task_id=checking_model_inputs_schema, execution_date=20221021T072836, start_date=20221021T072941, end_date=20221021T072942
+[2022-10-21 07:29:42,821] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-10-21 07:29:42,841] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

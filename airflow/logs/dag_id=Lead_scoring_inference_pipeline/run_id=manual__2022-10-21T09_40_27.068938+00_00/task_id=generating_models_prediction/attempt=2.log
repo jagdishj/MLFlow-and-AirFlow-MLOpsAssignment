@@ -1,0 +1,137 @@
+[2022-10-21 09:44:01,830] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: Lead_scoring_inference_pipeline.generating_models_prediction manual__2022-10-21T09:40:27.068938+00:00 [queued]>
+[2022-10-21 09:44:01,834] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: Lead_scoring_inference_pipeline.generating_models_prediction manual__2022-10-21T09:40:27.068938+00:00 [queued]>
+[2022-10-21 09:44:01,835] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-21 09:44:01,835] {taskinstance.py:1377} INFO - Starting attempt 2 of 2
+[2022-10-21 09:44:01,835] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-21 09:44:01,842] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): generating_models_prediction> on 2022-10-21 09:40:27.068938+00:00
+[2022-10-21 09:44:01,850] {standard_task_runner.py:52} INFO - Started process 1538 to run task
+[2022-10-21 09:44:01,854] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'Lead_scoring_inference_pipeline', 'generating_models_prediction', 'manual__2022-10-21T09:40:27.068938+00:00', '--job-id', '40', '--raw', '--subdir', 'DAGS_FOLDER/Lead_scoring_inference_pipeline/lead_scoring_inference_pipeline.py', '--cfg-path', '/tmp/tmpd9p5d9e5', '--error-file', '/tmp/tmpe2wixvo3']
+[2022-10-21 09:44:01,854] {standard_task_runner.py:80} INFO - Job 40: Subtask generating_models_prediction
+[2022-10-21 09:44:01,900] {task_command.py:371} INFO - Running <TaskInstance: Lead_scoring_inference_pipeline.generating_models_prediction manual__2022-10-21T09:40:27.068938+00:00 [running]> on host 1c4d0d77f535
+[2022-10-21 09:44:01,947] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=Lead_scoring_inference_pipeline
+AIRFLOW_CTX_TASK_ID=generating_models_prediction
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-21T09:40:27.068938+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-10-21T09:40:27.068938+00:00
+[2022-10-21 09:44:03,079] {logging_mixin.py:115} INFO - Data has been extracted successfully from lead_scoring_model_experimentation.
+[2022-10-21 09:44:03,135] {connectionpool.py:780} WARNING - Retrying (Retry(total=4, connect=4, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f36a7c05550>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/registered-models/get-latest-versions
+[2022-10-21 09:44:07,139] {connectionpool.py:780} WARNING - Retrying (Retry(total=3, connect=3, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f36a7c054f0>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/registered-models/get-latest-versions
+[2022-10-21 09:44:15,149] {connectionpool.py:780} WARNING - Retrying (Retry(total=2, connect=2, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f36ab3784f0>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/registered-models/get-latest-versions
+[2022-10-21 09:44:31,167] {connectionpool.py:780} WARNING - Retrying (Retry(total=1, connect=1, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f36ab378190>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/registered-models/get-latest-versions
+[2022-10-21 09:45:03,200] {connectionpool.py:780} WARNING - Retrying (Retry(total=0, connect=0, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f36ab378bb0>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/registered-models/get-latest-versions
+[2022-10-21 09:45:03,202] {taskinstance.py:1909} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "/opt/conda/lib/python3.8/site-packages/urllib3/util/connection.py", line 96, in create_connection
+    raise err
+  File "/opt/conda/lib/python3.8/site-packages/urllib3/util/connection.py", line 86, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/urllib3/connectionpool.py", line 699, in urlopen
+    httplib_response = self._make_request(
+  File "/opt/conda/lib/python3.8/site-packages/urllib3/connectionpool.py", line 394, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/opt/conda/lib/python3.8/site-packages/urllib3/connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/opt/conda/lib/python3.8/http/client.py", line 1256, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/opt/conda/lib/python3.8/http/client.py", line 1302, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/opt/conda/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/opt/conda/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/opt/conda/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/opt/conda/lib/python3.8/site-packages/urllib3/connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "/opt/conda/lib/python3.8/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f36ab38e1f0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/opt/conda/lib/python3.8/site-packages/urllib3/connectionpool.py", line 783, in urlopen
+    return self.urlopen(
+  File "/opt/conda/lib/python3.8/site-packages/urllib3/connectionpool.py", line 783, in urlopen
+    return self.urlopen(
+  File "/opt/conda/lib/python3.8/site-packages/urllib3/connectionpool.py", line 783, in urlopen
+    return self.urlopen(
+  [Previous line repeated 2 more times]
+  File "/opt/conda/lib/python3.8/site-packages/urllib3/connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "/opt/conda/lib/python3.8/site-packages/urllib3/util/retry.py", line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='0.0.0.0', port=6006): Max retries exceeded with url: /api/2.0/mlflow/registered-models/get-latest-versions (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f36ab38e1f0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/mlflow/utils/rest_utils.py", line 151, in http_request
+    return _get_http_response_with_retries(
+  File "/opt/conda/lib/python3.8/site-packages/mlflow/utils/rest_utils.py", line 91, in _get_http_response_with_retries
+    return session.request(method, url, **kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/requests/sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/requests/sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='0.0.0.0', port=6006): Max retries exceeded with url: /api/2.0/mlflow/registered-models/get-latest-versions (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f36ab38e1f0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/opt/conda/lib/python3.8/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/home/Assignment/03_inference_pipeline/scripts/utils.py", line 121, in get_models_prediction
+    loaded_model = mlflow.pyfunc.load_model(model_uri)
+  File "/opt/conda/lib/python3.8/site-packages/mlflow/pyfunc/__init__.py", line 716, in load_model
+    local_path = _download_artifact_from_uri(artifact_uri=model_uri, output_path=dst_path)
+  File "/opt/conda/lib/python3.8/site-packages/mlflow/tracking/artifact_utils.py", line 94, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+  File "/opt/conda/lib/python3.8/site-packages/mlflow/store/artifact/artifact_repository_registry.py", line 107, in get_artifact_repository
+    return _artifact_repository_registry.get_artifact_repository(artifact_uri)
+  File "/opt/conda/lib/python3.8/site-packages/mlflow/store/artifact/artifact_repository_registry.py", line 73, in get_artifact_repository
+    return repository(artifact_uri)
+  File "/opt/conda/lib/python3.8/site-packages/mlflow/store/artifact/models_artifact_repo.py", line 35, in __init__
+    uri = ModelsArtifactRepository.get_underlying_uri(artifact_uri)
+  File "/opt/conda/lib/python3.8/site-packages/mlflow/store/artifact/models_artifact_repo.py", line 68, in get_underlying_uri
+    (name, version) = get_model_name_and_version(client, uri)
+  File "/opt/conda/lib/python3.8/site-packages/mlflow/store/artifact/utils/models.py", line 74, in get_model_name_and_version
+    return model_name, str(_get_latest_model_version(client, model_name, model_stage))
+  File "/opt/conda/lib/python3.8/site-packages/mlflow/store/artifact/utils/models.py", line 28, in _get_latest_model_version
+    latest = client.get_latest_versions(name, None if stage is None else [stage])
+  File "/opt/conda/lib/python3.8/site-packages/mlflow/tracking/client.py", line 2048, in get_latest_versions
+    return self._get_registry_client().get_latest_versions(name, stages)
+  File "/opt/conda/lib/python3.8/site-packages/mlflow/tracking/_model_registry/client.py", line 149, in get_latest_versions
+    return self.store.get_latest_versions(name, stages)
+  File "/opt/conda/lib/python3.8/site-packages/mlflow/store/model_registry/rest_store.py", line 197, in get_latest_versions
+    response_proto = self._call_endpoint(GetLatestVersions, req_body, call_all_endpoints=True)
+  File "/opt/conda/lib/python3.8/site-packages/mlflow/store/model_registry/rest_store.py", line 61, in _call_endpoint
+    return call_endpoints(self.get_host_creds(), endpoints, json_body, response_proto)
+  File "/opt/conda/lib/python3.8/site-packages/mlflow/utils/rest_utils.py", line 267, in call_endpoints
+    return call_endpoint(host_creds, endpoint, method, json_body, response_proto)
+  File "/opt/conda/lib/python3.8/site-packages/mlflow/utils/rest_utils.py", line 253, in call_endpoint
+    response = http_request(
+  File "/opt/conda/lib/python3.8/site-packages/mlflow/utils/rest_utils.py", line 163, in http_request
+    raise MlflowException("API request to %s failed with exception %s" % (url, e))
+mlflow.exceptions.MlflowException: API request to http://0.0.0.0:6006/api/2.0/mlflow/registered-models/get-latest-versions failed with exception HTTPConnectionPool(host='0.0.0.0', port=6006): Max retries exceeded with url: /api/2.0/mlflow/registered-models/get-latest-versions (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f36ab38e1f0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2022-10-21 09:45:03,213] {taskinstance.py:1415} INFO - Marking task as FAILED. dag_id=Lead_scoring_inference_pipeline, task_id=generating_models_prediction, execution_date=20221021T094027, start_date=20221021T094401, end_date=20221021T094503
+[2022-10-21 09:45:03,221] {standard_task_runner.py:92} ERROR - Failed to execute job 40 for task generating_models_prediction (API request to http://0.0.0.0:6006/api/2.0/mlflow/registered-models/get-latest-versions failed with exception HTTPConnectionPool(host='0.0.0.0', port=6006): Max retries exceeded with url: /api/2.0/mlflow/registered-models/get-latest-versions (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f36ab38e1f0>: Failed to establish a new connection: [Errno 111] Connection refused')); 1538)
+[2022-10-21 09:45:03,248] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-10-21 09:45:03,277] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

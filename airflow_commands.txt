@@ -1,0 +1,13 @@
+airflow db init
+
+airflow users create \
+    --username upgrad \
+    --firstname upgrad \
+    --lastname upgrad \
+    --role Admin \
+    --email jagdish.junjur@gmail.com \
+    --password upgrad
+
+airflow webserver
+
+airflow scheduler 

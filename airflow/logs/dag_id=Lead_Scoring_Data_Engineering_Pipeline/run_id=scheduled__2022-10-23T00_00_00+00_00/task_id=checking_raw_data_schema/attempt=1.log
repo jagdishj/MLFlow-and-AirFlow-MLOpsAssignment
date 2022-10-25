@@ -1,0 +1,24 @@
+[2022-10-24 09:43:52,061] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: Lead_Scoring_Data_Engineering_Pipeline.checking_raw_data_schema scheduled__2022-10-23T00:00:00+00:00 [queued]>
+[2022-10-24 09:43:52,066] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: Lead_Scoring_Data_Engineering_Pipeline.checking_raw_data_schema scheduled__2022-10-23T00:00:00+00:00 [queued]>
+[2022-10-24 09:43:52,066] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-24 09:43:52,066] {taskinstance.py:1377} INFO - Starting attempt 1 of 2
+[2022-10-24 09:43:52,066] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-24 09:43:52,074] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): checking_raw_data_schema> on 2022-10-23 00:00:00+00:00
+[2022-10-24 09:43:52,077] {standard_task_runner.py:52} INFO - Started process 3409 to run task
+[2022-10-24 09:43:52,081] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'Lead_Scoring_Data_Engineering_Pipeline', 'checking_raw_data_schema', 'scheduled__2022-10-23T00:00:00+00:00', '--job-id', '223', '--raw', '--subdir', 'DAGS_FOLDER/Lead_scoring_data_pipeline/.ipynb_checkpoints/lead_scoring_data_pipeline-checkpoint.py', '--cfg-path', '/tmp/tmp8ugpxttr', '--error-file', '/tmp/tmp4j3oz8bd']
+[2022-10-24 09:43:52,082] {standard_task_runner.py:80} INFO - Job 223: Subtask checking_raw_data_schema
+[2022-10-24 09:43:52,125] {task_command.py:371} INFO - Running <TaskInstance: Lead_Scoring_Data_Engineering_Pipeline.checking_raw_data_schema scheduled__2022-10-23T00:00:00+00:00 [running]> on host 0307537c0a24
+[2022-10-24 09:43:52,192] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=Lead_Scoring_Data_Engineering_Pipeline
+AIRFLOW_CTX_TASK_ID=checking_raw_data_schema
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-23T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-10-23T00:00:00+00:00
+[2022-10-24 09:43:52,765] {logging_mixin.py:115} INFO - Raw datas schema is in line with the schema present in schema.py
+[2022-10-24 09:43:52,772] {python.py:173} INFO - Done. Returned value was: None
+[2022-10-24 09:43:52,778] {taskinstance.py:1415} INFO - Marking task as SUCCESS. dag_id=Lead_Scoring_Data_Engineering_Pipeline, task_id=checking_raw_data_schema, execution_date=20221023T000000, start_date=20221024T094352, end_date=20221024T094352
+[2022-10-24 09:43:52,813] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-10-24 09:43:52,840] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

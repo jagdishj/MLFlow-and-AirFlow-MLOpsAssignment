@@ -1,0 +1,25 @@
+[2022-10-22 05:00:04,898] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: Lead_scoring_inference_pipeline.encoding_categorical_variables scheduled__2022-10-22T04:00:00+00:00 [queued]>
+[2022-10-22 05:00:04,904] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: Lead_scoring_inference_pipeline.encoding_categorical_variables scheduled__2022-10-22T04:00:00+00:00 [queued]>
+[2022-10-22 05:00:04,905] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-22 05:00:04,905] {taskinstance.py:1377} INFO - Starting attempt 1 of 2
+[2022-10-22 05:00:04,905] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-22 05:00:04,917] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): encoding_categorical_variables> on 2022-10-22 04:00:00+00:00
+[2022-10-22 05:00:04,929] {standard_task_runner.py:52} INFO - Started process 7971 to run task
+[2022-10-22 05:00:04,934] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'Lead_scoring_inference_pipeline', 'encoding_categorical_variables', 'scheduled__2022-10-22T04:00:00+00:00', '--job-id', '169', '--raw', '--subdir', 'DAGS_FOLDER/Lead_scoring_inference_pipeline/.ipynb_checkpoints/lead_scoring_inference_pipeline-checkpoint.py', '--cfg-path', '/tmp/tmp644vnokw', '--error-file', '/tmp/tmpj59hglzx']
+[2022-10-22 05:00:04,935] {standard_task_runner.py:80} INFO - Job 169: Subtask encoding_categorical_variables
+[2022-10-22 05:00:04,983] {task_command.py:371} INFO - Running <TaskInstance: Lead_scoring_inference_pipeline.encoding_categorical_variables scheduled__2022-10-22T04:00:00+00:00 [running]> on host cd271ac689b8
+[2022-10-22 05:00:05,041] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=Lead_scoring_inference_pipeline
+AIRFLOW_CTX_TASK_ID=encoding_categorical_variables
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-22T04:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-10-22T04:00:00+00:00
+[2022-10-22 05:00:06,274] {logging_mixin.py:115} INFO - Data has been extracted successfully from lead_scoring_model_experimentation.
+[2022-10-22 05:00:07,408] {logging_mixin.py:115} INFO - input_data has been saved successfully to table features
+[2022-10-22 05:00:07,449] {python.py:173} INFO - Done. Returned value was: None
+[2022-10-22 05:00:07,455] {taskinstance.py:1415} INFO - Marking task as SUCCESS. dag_id=Lead_scoring_inference_pipeline, task_id=encoding_categorical_variables, execution_date=20221022T040000, start_date=20221022T050004, end_date=20221022T050007
+[2022-10-22 05:00:07,513] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-10-22 05:00:07,549] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

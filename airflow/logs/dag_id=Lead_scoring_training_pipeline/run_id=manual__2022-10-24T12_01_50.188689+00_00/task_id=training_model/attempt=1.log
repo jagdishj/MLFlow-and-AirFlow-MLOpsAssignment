@@ -1,0 +1,28 @@
+[2022-10-24 12:02:00,998] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: Lead_scoring_training_pipeline.training_model manual__2022-10-24T12:01:50.188689+00:00 [queued]>
+[2022-10-24 12:02:01,003] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: Lead_scoring_training_pipeline.training_model manual__2022-10-24T12:01:50.188689+00:00 [queued]>
+[2022-10-24 12:02:01,003] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-24 12:02:01,003] {taskinstance.py:1377} INFO - Starting attempt 1 of 2
+[2022-10-24 12:02:01,003] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-24 12:02:01,011] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): training_model> on 2022-10-24 12:01:50.188689+00:00
+[2022-10-24 12:02:01,019] {standard_task_runner.py:52} INFO - Started process 3930 to run task
+[2022-10-24 12:02:01,025] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'Lead_scoring_training_pipeline', 'training_model', 'manual__2022-10-24T12:01:50.188689+00:00', '--job-id', '260', '--raw', '--subdir', 'DAGS_FOLDER/Lead_scoring_training_pipeline/.ipynb_checkpoints/lead_scoring_training_pipeline-checkpoint.py', '--cfg-path', '/tmp/tmpd6w5amfr', '--error-file', '/tmp/tmpa85xo2aj']
+[2022-10-24 12:02:01,025] {standard_task_runner.py:80} INFO - Job 260: Subtask training_model
+[2022-10-24 12:02:01,077] {task_command.py:371} INFO - Running <TaskInstance: Lead_scoring_training_pipeline.training_model manual__2022-10-24T12:01:50.188689+00:00 [running]> on host 2d7632d022aa
+[2022-10-24 12:02:01,126] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=Lead_scoring_training_pipeline
+AIRFLOW_CTX_TASK_ID=training_model
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-24T12:01:50.188689+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-10-24T12:01:50.188689+00:00
+[2022-10-24 12:02:02,733] {logging_mixin.py:115} WARNING - /opt/conda/lib/python3.8/site-packages/sklearn/utils/validation.py:72 DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+[2022-10-24 12:02:11,242] {logging_mixin.py:115} WARNING - Registered model 'LightGBM' already exists. Creating a new version of this model...
+[2022-10-24 12:02:11,264] {logging_mixin.py:115} WARNING - 2022/10/24 12:02:11 INFO mlflow.tracking._model_registry.client: Waiting up to 300 seconds for model version to finish creation.                     Model name: LightGBM, version 10
+[2022-10-24 12:02:11,264] {logging_mixin.py:115} WARNING - Created version '10' of model 'LightGBM'.
+[2022-10-24 12:02:11,725] {logging_mixin.py:115} INFO - get_trained_model has been executed successfully.
+[2022-10-24 12:02:11,747] {python.py:173} INFO - Done. Returned value was: None
+[2022-10-24 12:02:11,757] {taskinstance.py:1415} INFO - Marking task as SUCCESS. dag_id=Lead_scoring_training_pipeline, task_id=training_model, execution_date=20221024T120150, start_date=20221024T120200, end_date=20221024T120211
+[2022-10-24 12:02:11,812] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-10-24 12:02:11,833] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

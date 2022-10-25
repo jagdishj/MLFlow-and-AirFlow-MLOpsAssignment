@@ -1,0 +1,23 @@
+[2022-10-21 07:28:50,742] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: Lead_Scoring_Data_Engineering_Pipeline.mapping_city_tier manual__2022-10-21T07:28:36.169214+00:00 [queued]>
+[2022-10-21 07:28:50,747] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: Lead_Scoring_Data_Engineering_Pipeline.mapping_city_tier manual__2022-10-21T07:28:36.169214+00:00 [queued]>
+[2022-10-21 07:28:50,747] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-21 07:28:50,747] {taskinstance.py:1377} INFO - Starting attempt 1 of 2
+[2022-10-21 07:28:50,747] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-21 07:28:50,755] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): mapping_city_tier> on 2022-10-21 07:28:36.169214+00:00
+[2022-10-21 07:28:50,758] {standard_task_runner.py:52} INFO - Started process 1420 to run task
+[2022-10-21 07:28:50,764] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'Lead_Scoring_Data_Engineering_Pipeline', 'mapping_city_tier', 'manual__2022-10-21T07:28:36.169214+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/Lead_scoring_data_pipeline/.ipynb_checkpoints/lead_scoring_data_pipeline-checkpoint.py', '--cfg-path', '/tmp/tmpypgs92e5', '--error-file', '/tmp/tmp_mnpxeks']
+[2022-10-21 07:28:50,766] {standard_task_runner.py:80} INFO - Job 7: Subtask mapping_city_tier
+[2022-10-21 07:28:50,807] {task_command.py:371} INFO - Running <TaskInstance: Lead_Scoring_Data_Engineering_Pipeline.mapping_city_tier manual__2022-10-21T07:28:36.169214+00:00 [running]> on host 53fb9ec0a08c
+[2022-10-21 07:28:50,853] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=Lead_Scoring_Data_Engineering_Pipeline
+AIRFLOW_CTX_TASK_ID=mapping_city_tier
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-21T07:28:36.169214+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-10-21T07:28:36.169214+00:00
+[2022-10-21 07:28:59,302] {python.py:173} INFO - Done. Returned value was: Writing to DataBase city_tier_mapped Done or Data Already was in Table. Check Logs.
+[2022-10-21 07:28:59,313] {taskinstance.py:1415} INFO - Marking task as SUCCESS. dag_id=Lead_Scoring_Data_Engineering_Pipeline, task_id=mapping_city_tier, execution_date=20221021T072836, start_date=20221021T072850, end_date=20221021T072859
+[2022-10-21 07:28:59,361] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-10-21 07:28:59,390] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

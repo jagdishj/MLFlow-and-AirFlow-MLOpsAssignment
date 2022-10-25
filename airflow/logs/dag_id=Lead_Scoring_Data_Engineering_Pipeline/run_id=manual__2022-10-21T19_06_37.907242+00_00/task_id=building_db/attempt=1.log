@@ -1,0 +1,25 @@
+[2022-10-21 19:06:39,929] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: Lead_Scoring_Data_Engineering_Pipeline.building_db manual__2022-10-21T19:06:37.907242+00:00 [queued]>
+[2022-10-21 19:06:39,934] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: Lead_Scoring_Data_Engineering_Pipeline.building_db manual__2022-10-21T19:06:37.907242+00:00 [queued]>
+[2022-10-21 19:06:39,934] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-21 19:06:39,934] {taskinstance.py:1377} INFO - Starting attempt 1 of 2
+[2022-10-21 19:06:39,934] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-21 19:06:39,942] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): building_db> on 2022-10-21 19:06:37.907242+00:00
+[2022-10-21 19:06:39,946] {standard_task_runner.py:52} INFO - Started process 1449 to run task
+[2022-10-21 19:06:39,953] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'Lead_Scoring_Data_Engineering_Pipeline', 'building_db', 'manual__2022-10-21T19:06:37.907242+00:00', '--job-id', '110', '--raw', '--subdir', 'DAGS_FOLDER/Lead_scoring_data_pipeline/.ipynb_checkpoints/lead_scoring_data_pipeline-checkpoint.py', '--cfg-path', '/tmp/tmpjsxyd4ot', '--error-file', '/tmp/tmpz2uirg82']
+[2022-10-21 19:06:39,955] {standard_task_runner.py:80} INFO - Job 110: Subtask building_db
+[2022-10-21 19:06:39,995] {task_command.py:371} INFO - Running <TaskInstance: Lead_Scoring_Data_Engineering_Pipeline.building_db manual__2022-10-21T19:06:37.907242+00:00 [running]> on host 50ef1aee5f67
+[2022-10-21 19:06:40,041] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=Lead_Scoring_Data_Engineering_Pipeline
+AIRFLOW_CTX_TASK_ID=building_db
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-21T19:06:37.907242+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-10-21T19:06:37.907242+00:00
+[2022-10-21 19:06:40,042] {logging_mixin.py:115} INFO - DB Already Exist
+[2022-10-21 19:06:40,042] {logging_mixin.py:115} INFO - /home
+[2022-10-21 19:06:40,042] {python.py:173} INFO - Done. Returned value was: DB Exist
+[2022-10-21 19:06:40,055] {taskinstance.py:1415} INFO - Marking task as SUCCESS. dag_id=Lead_Scoring_Data_Engineering_Pipeline, task_id=building_db, execution_date=20221021T190637, start_date=20221021T190639, end_date=20221021T190640
+[2022-10-21 19:06:40,080] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-10-21 19:06:40,112] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

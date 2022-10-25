@@ -1,0 +1,101 @@
+[2022-10-21 16:25:03,298] {taskinstance.py:1169} INFO - Dependencies not met for <TaskInstance: Lead_scoring_inference_pipeline.generating_models_prediction scheduled__2022-10-21T15:00:00+00:00 [up_for_retry]>, dependency 'Not In Retry Period' FAILED: Task is not ready for retry yet but will be retried automatically. Current date is 2022-10-21T16:25:03.298565+00:00 and task will be retried at 2022-10-21T16:25:04.041583+00:00.
+[2022-10-21 16:25:03,298] {local_task_job.py:101} INFO - Task is not able to be run
+[2022-10-21 16:26:34,685] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: Lead_scoring_inference_pipeline.generating_models_prediction scheduled__2022-10-21T15:00:00+00:00 [queued]>
+[2022-10-21 16:26:34,690] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: Lead_scoring_inference_pipeline.generating_models_prediction scheduled__2022-10-21T15:00:00+00:00 [queued]>
+[2022-10-21 16:26:34,690] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-21 16:26:34,690] {taskinstance.py:1377} INFO - Starting attempt 2 of 2
+[2022-10-21 16:26:34,690] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-21 16:26:34,699] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): generating_models_prediction> on 2022-10-21 15:00:00+00:00
+[2022-10-21 16:26:34,706] {standard_task_runner.py:52} INFO - Started process 2429 to run task
+[2022-10-21 16:26:34,713] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'Lead_scoring_inference_pipeline', 'generating_models_prediction', 'scheduled__2022-10-21T15:00:00+00:00', '--job-id', '55', '--raw', '--subdir', 'DAGS_FOLDER/Lead_scoring_inference_pipeline/lead_scoring_inference_pipeline.py', '--cfg-path', '/tmp/tmpsiu3yizk', '--error-file', '/tmp/tmpg91ll3ew']
+[2022-10-21 16:26:34,713] {standard_task_runner.py:80} INFO - Job 55: Subtask generating_models_prediction
+[2022-10-21 16:26:34,756] {task_command.py:371} INFO - Running <TaskInstance: Lead_scoring_inference_pipeline.generating_models_prediction scheduled__2022-10-21T15:00:00+00:00 [running]> on host 2e24bcea55eb
+[2022-10-21 16:26:34,803] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=Lead_scoring_inference_pipeline
+AIRFLOW_CTX_TASK_ID=generating_models_prediction
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-21T15:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-10-21T15:00:00+00:00
+[2022-10-21 16:26:35,979] {logging_mixin.py:115} INFO - Data has been extracted successfully from lead_scoring_model_experimentation.
+[2022-10-21 16:26:36,037] {connectionpool.py:780} WARNING - Retrying (Retry(total=4, connect=4, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fb8af7f8c70>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/registered-models/get-latest-versions
+[2022-10-21 16:26:40,042] {connectionpool.py:780} WARNING - Retrying (Retry(total=3, connect=3, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fb8af7f8df0>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/registered-models/get-latest-versions
+[2022-10-21 16:26:40,066] {taskinstance.py:1909} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/opt/conda/lib/python3.8/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/home/Assignment/03_inference_pipeline/scripts/utils.py", line 121, in get_models_prediction
+    loaded_model = mlflow.pyfunc.load_model(model_uri)
+  File "/opt/conda/lib/python3.8/site-packages/mlflow/pyfunc/__init__.py", line 716, in load_model
+    local_path = _download_artifact_from_uri(artifact_uri=model_uri, output_path=dst_path)
+  File "/opt/conda/lib/python3.8/site-packages/mlflow/tracking/artifact_utils.py", line 94, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+  File "/opt/conda/lib/python3.8/site-packages/mlflow/store/artifact/artifact_repository_registry.py", line 107, in get_artifact_repository
+    return _artifact_repository_registry.get_artifact_repository(artifact_uri)
+  File "/opt/conda/lib/python3.8/site-packages/mlflow/store/artifact/artifact_repository_registry.py", line 73, in get_artifact_repository
+    return repository(artifact_uri)
+  File "/opt/conda/lib/python3.8/site-packages/mlflow/store/artifact/models_artifact_repo.py", line 35, in __init__
+    uri = ModelsArtifactRepository.get_underlying_uri(artifact_uri)
+  File "/opt/conda/lib/python3.8/site-packages/mlflow/store/artifact/models_artifact_repo.py", line 68, in get_underlying_uri
+    (name, version) = get_model_name_and_version(client, uri)
+  File "/opt/conda/lib/python3.8/site-packages/mlflow/store/artifact/utils/models.py", line 74, in get_model_name_and_version
+    return model_name, str(_get_latest_model_version(client, model_name, model_stage))
+  File "/opt/conda/lib/python3.8/site-packages/mlflow/store/artifact/utils/models.py", line 28, in _get_latest_model_version
+    latest = client.get_latest_versions(name, None if stage is None else [stage])
+  File "/opt/conda/lib/python3.8/site-packages/mlflow/tracking/client.py", line 2048, in get_latest_versions
+    return self._get_registry_client().get_latest_versions(name, stages)
+  File "/opt/conda/lib/python3.8/site-packages/mlflow/tracking/_model_registry/client.py", line 149, in get_latest_versions
+    return self.store.get_latest_versions(name, stages)
+  File "/opt/conda/lib/python3.8/site-packages/mlflow/store/model_registry/rest_store.py", line 197, in get_latest_versions
+    response_proto = self._call_endpoint(GetLatestVersions, req_body, call_all_endpoints=True)
+  File "/opt/conda/lib/python3.8/site-packages/mlflow/store/model_registry/rest_store.py", line 61, in _call_endpoint
+    return call_endpoints(self.get_host_creds(), endpoints, json_body, response_proto)
+  File "/opt/conda/lib/python3.8/site-packages/mlflow/utils/rest_utils.py", line 267, in call_endpoints
+    return call_endpoint(host_creds, endpoint, method, json_body, response_proto)
+  File "/opt/conda/lib/python3.8/site-packages/mlflow/utils/rest_utils.py", line 256, in call_endpoint
+    response = verify_rest_response(response, endpoint)
+  File "/opt/conda/lib/python3.8/site-packages/mlflow/utils/rest_utils.py", line 191, in verify_rest_response
+    raise MlflowException("%s. Response body: '%s'" % (base_msg, response.text))
+mlflow.exceptions.MlflowException: API request to endpoint /api/2.0/mlflow/registered-models/get-latest-versions failed with error code 404 != 200. Response body: '
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Airflow 404</title>
+    <link rel="icon" type="image/png" href="/static/pin_32.png">
+  </head>
+  <body>
+    <div style="font-family: verdana; text-align: center; margin-top: 200px;">
+      <img src="/static/pin_100.png" width="50px" alt="pin-logo" />
+      <h1>Airflow 404</h1>
+      <p>Page cannot be found.</p>
+      <a href="/">Return to the main page</a>
+      <p>2e24bcea55eb</p>
+    </div>
+  </body>
+</html>'
+[2022-10-21 16:26:40,077] {taskinstance.py:1415} INFO - Marking task as FAILED. dag_id=Lead_scoring_inference_pipeline, task_id=generating_models_prediction, execution_date=20221021T150000, start_date=20221021T162634, end_date=20221021T162640
+[2022-10-21 16:26:40,087] {standard_task_runner.py:92} ERROR - Failed to execute job 55 for task generating_models_prediction (API request to endpoint /api/2.0/mlflow/registered-models/get-latest-versions failed with error code 404 != 200. Response body: '
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Airflow 404</title>
+    <link rel="icon" type="image/png" href="/static/pin_32.png">
+  </head>
+  <body>
+    <div style="font-family: verdana; text-align: center; margin-top: 200px;">
+      <img src="/static/pin_100.png" width="50px" alt="pin-logo" />
+      <h1>Airflow 404</h1>
+      <p>Page cannot be found.</p>
+      <a href="/">Return to the main page</a>
+      <p>2e24bcea55eb</p>
+    </div>
+  </body>
+</html>'; 2429)
+[2022-10-21 16:26:40,137] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-10-21 16:26:40,156] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

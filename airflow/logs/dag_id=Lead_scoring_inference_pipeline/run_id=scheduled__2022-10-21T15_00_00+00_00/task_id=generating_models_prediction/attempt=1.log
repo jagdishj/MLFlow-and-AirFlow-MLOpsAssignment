@@ -1,0 +1,50 @@
+[2022-10-21 16:24:58,341] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: Lead_scoring_inference_pipeline.generating_models_prediction scheduled__2022-10-21T15:00:00+00:00 [queued]>
+[2022-10-21 16:24:58,346] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: Lead_scoring_inference_pipeline.generating_models_prediction scheduled__2022-10-21T15:00:00+00:00 [queued]>
+[2022-10-21 16:24:58,346] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-21 16:24:58,346] {taskinstance.py:1377} INFO - Starting attempt 1 of 2
+[2022-10-21 16:24:58,346] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-21 16:24:58,354] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): generating_models_prediction> on 2022-10-21 15:00:00+00:00
+[2022-10-21 16:24:58,362] {standard_task_runner.py:52} INFO - Started process 2350 to run task
+[2022-10-21 16:24:58,368] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'Lead_scoring_inference_pipeline', 'generating_models_prediction', 'scheduled__2022-10-21T15:00:00+00:00', '--job-id', '51', '--raw', '--subdir', 'DAGS_FOLDER/Lead_scoring_inference_pipeline/.ipynb_checkpoints/lead_scoring_inference_pipeline-checkpoint.py', '--cfg-path', '/tmp/tmp7v5m26r5', '--error-file', '/tmp/tmpi2ivvmgi']
+[2022-10-21 16:24:58,368] {standard_task_runner.py:80} INFO - Job 51: Subtask generating_models_prediction
+[2022-10-21 16:24:58,403] {task_command.py:371} INFO - Running <TaskInstance: Lead_scoring_inference_pipeline.generating_models_prediction scheduled__2022-10-21T15:00:00+00:00 [running]> on host 2e24bcea55eb
+[2022-10-21 16:24:58,437] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=Lead_scoring_inference_pipeline
+AIRFLOW_CTX_TASK_ID=generating_models_prediction
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-21T15:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-10-21T15:00:00+00:00
+[2022-10-21 16:24:58,997] {process_utils.py:125} INFO - Sending Signals.SIGTERM to group 2350. PIDs of all processes in the group: [2350]
+[2022-10-21 16:24:58,997] {process_utils.py:80} INFO - Sending the signal Signals.SIGTERM to group 2350
+[2022-10-21 16:24:59,020] {taskinstance.py:1561} ERROR - Received SIGTERM. Terminating subprocesses.
+[2022-10-21 16:24:59,036] {taskinstance.py:1909} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/opt/conda/lib/python3.8/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/home/Assignment/03_inference_pipeline/scripts/utils.py", line 119, in get_models_prediction
+    X = __read_input_data(db_path, db_file_name, 'features')
+  File "/home/Assignment/03_inference_pipeline/scripts/utils.py", line 43, in __read_input_data
+    df = pd.read_sql('select * from '+ table_name, cnx)
+  File "/opt/conda/lib/python3.8/site-packages/pandas/io/sql.py", line 566, in read_sql
+    return pandas_sql.read_query(
+  File "/opt/conda/lib/python3.8/site-packages/pandas/io/sql.py", line 2097, in read_query
+    frame = _wrap_result(
+  File "/opt/conda/lib/python3.8/site-packages/pandas/io/sql.py", line 150, in _wrap_result
+    frame = DataFrame.from_records(data, columns=columns, coerce_float=coerce_float)
+  File "/opt/conda/lib/python3.8/site-packages/pandas/core/frame.py", line 2222, in from_records
+    arrays, arr_columns = to_arrays(data, columns)
+  File "/opt/conda/lib/python3.8/site-packages/pandas/core/internals/construction.py", line 873, in to_arrays
+    arr = _list_to_arrays(data)
+  File "/opt/conda/lib/python3.8/site-packages/pandas/core/internals/construction.py", line 891, in _list_to_arrays
+    content = lib.to_object_array_tuples(data)
+  File "/opt/conda/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1563, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2022-10-21 16:24:59,041] {taskinstance.py:1415} INFO - Marking task as UP_FOR_RETRY. dag_id=Lead_scoring_inference_pipeline, task_id=generating_models_prediction, execution_date=20221021T150000, start_date=20221021T162458, end_date=20221021T162459
+[2022-10-21 16:24:59,048] {standard_task_runner.py:92} ERROR - Failed to execute job 51 for task generating_models_prediction (Task received SIGTERM signal; 2350)
+[2022-10-21 16:24:59,090] {process_utils.py:75} INFO - Process psutil.Process(pid=2350, status='terminated', exitcode=1, started='16:24:57') (2350) terminated with exit code 1

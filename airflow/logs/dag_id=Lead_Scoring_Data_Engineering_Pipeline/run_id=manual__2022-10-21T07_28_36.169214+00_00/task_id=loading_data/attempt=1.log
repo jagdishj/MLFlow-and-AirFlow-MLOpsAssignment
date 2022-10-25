@@ -1,0 +1,23 @@
+[2022-10-21 07:28:43,347] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: Lead_Scoring_Data_Engineering_Pipeline.loading_data manual__2022-10-21T07:28:36.169214+00:00 [queued]>
+[2022-10-21 07:28:43,352] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: Lead_Scoring_Data_Engineering_Pipeline.loading_data manual__2022-10-21T07:28:36.169214+00:00 [queued]>
+[2022-10-21 07:28:43,352] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-21 07:28:43,352] {taskinstance.py:1377} INFO - Starting attempt 1 of 2
+[2022-10-21 07:28:43,352] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-21 07:28:43,360] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): loading_data> on 2022-10-21 07:28:36.169214+00:00
+[2022-10-21 07:28:43,364] {standard_task_runner.py:52} INFO - Started process 1402 to run task
+[2022-10-21 07:28:43,368] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'Lead_Scoring_Data_Engineering_Pipeline', 'loading_data', 'manual__2022-10-21T07:28:36.169214+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/Lead_scoring_data_pipeline/.ipynb_checkpoints/lead_scoring_data_pipeline-checkpoint.py', '--cfg-path', '/tmp/tmpnk01vkdi', '--error-file', '/tmp/tmps6uoihmt']
+[2022-10-21 07:28:43,369] {standard_task_runner.py:80} INFO - Job 6: Subtask loading_data
+[2022-10-21 07:28:43,414] {task_command.py:371} INFO - Running <TaskInstance: Lead_Scoring_Data_Engineering_Pipeline.loading_data manual__2022-10-21T07:28:36.169214+00:00 [running]> on host 53fb9ec0a08c
+[2022-10-21 07:28:43,461] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=Lead_Scoring_Data_Engineering_Pipeline
+AIRFLOW_CTX_TASK_ID=loading_data
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-21T07:28:36.169214+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-10-21T07:28:36.169214+00:00
+[2022-10-21 07:28:48,722] {python.py:173} INFO - Done. Returned value was: Writing to DataBase loaded_data Done or Data Already was in Table. Check Logs.
+[2022-10-21 07:28:48,733] {taskinstance.py:1415} INFO - Marking task as SUCCESS. dag_id=Lead_Scoring_Data_Engineering_Pipeline, task_id=loading_data, execution_date=20221021T072836, start_date=20221021T072843, end_date=20221021T072848
+[2022-10-21 07:28:48,757] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-10-21 07:28:48,786] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

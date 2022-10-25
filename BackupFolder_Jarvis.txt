@@ -1,0 +1,6 @@
+Steps to backup you assignment's Jarvis files
+- Start a terminal session
+- cd ~
+- tar cvf jarvis-backup-10-20-2022.tar Assignment airflow
+- gzip -9 jarvis-backup-10-24-2022_final.tar
+- Download jarvis-backup-20-10.tar.gz  from home folder to your local PC

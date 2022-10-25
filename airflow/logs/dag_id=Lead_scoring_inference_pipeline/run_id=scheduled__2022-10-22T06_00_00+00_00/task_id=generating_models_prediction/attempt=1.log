@@ -1,0 +1,26 @@
+[2022-10-22 18:50:40,368] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: Lead_scoring_inference_pipeline.generating_models_prediction scheduled__2022-10-22T06:00:00+00:00 [queued]>
+[2022-10-22 18:50:40,373] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: Lead_scoring_inference_pipeline.generating_models_prediction scheduled__2022-10-22T06:00:00+00:00 [queued]>
+[2022-10-22 18:50:40,373] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-22 18:50:40,373] {taskinstance.py:1377} INFO - Starting attempt 1 of 2
+[2022-10-22 18:50:40,373] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-22 18:50:40,381] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): generating_models_prediction> on 2022-10-22 06:00:00+00:00
+[2022-10-22 18:50:40,388] {standard_task_runner.py:52} INFO - Started process 3048 to run task
+[2022-10-22 18:50:40,394] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'Lead_scoring_inference_pipeline', 'generating_models_prediction', 'scheduled__2022-10-22T06:00:00+00:00', '--job-id', '196', '--raw', '--subdir', 'DAGS_FOLDER/Lead_scoring_inference_pipeline/.ipynb_checkpoints/lead_scoring_inference_pipeline-checkpoint.py', '--cfg-path', '/tmp/tmpclsjlq7p', '--error-file', '/tmp/tmponnzl9ts']
+[2022-10-22 18:50:40,394] {standard_task_runner.py:80} INFO - Job 196: Subtask generating_models_prediction
+[2022-10-22 18:50:40,438] {task_command.py:371} INFO - Running <TaskInstance: Lead_scoring_inference_pipeline.generating_models_prediction scheduled__2022-10-22T06:00:00+00:00 [running]> on host 19b44d4c03b8
+[2022-10-22 18:50:40,488] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=Lead_scoring_inference_pipeline
+AIRFLOW_CTX_TASK_ID=generating_models_prediction
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-22T06:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-10-22T06:00:00+00:00
+[2022-10-22 18:50:41,640] {logging_mixin.py:115} INFO - Data has been extracted successfully from lead_scoring_model_experimentation.
+[2022-10-22 18:50:42,565] {logging_mixin.py:115} INFO - [1 0 0 ... 1 1 1]
+[2022-10-22 18:50:42,984] {logging_mixin.py:115} INFO - input_data has been saved successfully to table predicted_output
+[2022-10-22 18:50:42,984] {python.py:173} INFO - Done. Returned value was: Predictions are done and save in Final_Predictions Table
+[2022-10-22 18:50:42,997] {taskinstance.py:1415} INFO - Marking task as SUCCESS. dag_id=Lead_scoring_inference_pipeline, task_id=generating_models_prediction, execution_date=20221022T060000, start_date=20221022T185040, end_date=20221022T185042
+[2022-10-22 18:50:43,050] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-10-22 18:50:43,076] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,21 @@
+[2022-10-24 09:04:08,850] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: Lead_scoring_inference_pipeline.generating_models_prediction scheduled__2022-10-24T08:00:00+00:00 [up_for_retry]>
+[2022-10-24 09:04:08,857] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: Lead_scoring_inference_pipeline.generating_models_prediction scheduled__2022-10-24T08:00:00+00:00 [up_for_retry]>
+[2022-10-24 09:04:08,857] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-24 09:04:08,857] {taskinstance.py:1377} INFO - Starting attempt 2 of 2
+[2022-10-24 09:04:08,857] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-24 09:04:08,869] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): generating_models_prediction> on 2022-10-24 08:00:00+00:00
+[2022-10-24 09:04:08,882] {standard_task_runner.py:52} INFO - Started process 3802 to run task
+[2022-10-24 09:04:08,889] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'Lead_scoring_inference_pipeline', 'generating_models_prediction', 'scheduled__2022-10-24T08:00:00+00:00', '--job-id', '215', '--raw', '--subdir', 'DAGS_FOLDER/Lead_scoring_inference_pipeline/.ipynb_checkpoints/lead_scoring_inference_pipeline-checkpoint.py', '--cfg-path', '/tmp/tmpzq80l3nm', '--error-file', '/tmp/tmppvral9ty']
+[2022-10-24 09:04:08,890] {standard_task_runner.py:80} INFO - Job 215: Subtask generating_models_prediction
+[2022-10-24 09:04:08,939] {task_command.py:371} INFO - Running <TaskInstance: Lead_scoring_inference_pipeline.generating_models_prediction scheduled__2022-10-24T08:00:00+00:00 [running]> on host 6b7947c6cb4e
+[2022-10-24 09:04:08,991] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=Lead_scoring_inference_pipeline
+AIRFLOW_CTX_TASK_ID=generating_models_prediction
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-24T08:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-10-24T08:00:00+00:00
+[2022-10-24 09:04:10,123] {logging_mixin.py:115} INFO - Data has been extracted successfully from lead_scoring_model_experimentation.
+[2022-10-24 09:04:10,180] {connectionpool.py:780} WARNING - Retrying (Retry(total=4, connect=4, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f79bfffca90>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/registered-models/get-latest-versions

@@ -1,0 +1,25 @@
+[2022-10-21 15:57:31,280] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: Lead_scoring_inference_pipeline.checking_input_features scheduled__2022-10-21T14:00:00+00:00 [queued]>
+[2022-10-21 15:57:31,285] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: Lead_scoring_inference_pipeline.checking_input_features scheduled__2022-10-21T14:00:00+00:00 [queued]>
+[2022-10-21 15:57:31,285] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-21 15:57:31,285] {taskinstance.py:1377} INFO - Starting attempt 1 of 2
+[2022-10-21 15:57:31,285] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-21 15:57:31,293] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): checking_input_features> on 2022-10-21 14:00:00+00:00
+[2022-10-21 15:57:31,300] {standard_task_runner.py:52} INFO - Started process 1755 to run task
+[2022-10-21 15:57:31,306] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'Lead_scoring_inference_pipeline', 'checking_input_features', 'scheduled__2022-10-21T14:00:00+00:00', '--job-id', '43', '--raw', '--subdir', 'DAGS_FOLDER/Lead_scoring_inference_pipeline/lead_scoring_inference_pipeline.py', '--cfg-path', '/tmp/tmppyo6ml6e', '--error-file', '/tmp/tmpcl4xob23']
+[2022-10-21 15:57:31,307] {standard_task_runner.py:80} INFO - Job 43: Subtask checking_input_features
+[2022-10-21 15:57:31,350] {task_command.py:371} INFO - Running <TaskInstance: Lead_scoring_inference_pipeline.checking_input_features scheduled__2022-10-21T14:00:00+00:00 [running]> on host 2e24bcea55eb
+[2022-10-21 15:57:31,402] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=Lead_scoring_inference_pipeline
+AIRFLOW_CTX_TASK_ID=checking_input_features
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-21T14:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-10-21T14:00:00+00:00
+[2022-10-21 15:57:32,788] {logging_mixin.py:115} INFO - Data has been extracted successfully from lead_scoring_model_experimentation.
+[2022-10-21 15:57:32,789] {logging_mixin.py:115} INFO - Some of the models inputs are missing
+[2022-10-21 15:57:32,789] {python.py:173} INFO - Done. Returned value was: None
+[2022-10-21 15:57:32,794] {taskinstance.py:1415} INFO - Marking task as SUCCESS. dag_id=Lead_scoring_inference_pipeline, task_id=checking_input_features, execution_date=20221021T140000, start_date=20221021T155731, end_date=20221021T155732
+[2022-10-21 15:57:32,839] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-10-21 15:57:32,875] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

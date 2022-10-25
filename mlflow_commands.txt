@@ -1,0 +1,1 @@
+mlflow server --backend-store-uri='sqlite:////home/mlruns/Lead_scoring_mlflow_production.db' --default-artifact-root="/home/mlruns/" --port=6007 --host=0.0.0.0

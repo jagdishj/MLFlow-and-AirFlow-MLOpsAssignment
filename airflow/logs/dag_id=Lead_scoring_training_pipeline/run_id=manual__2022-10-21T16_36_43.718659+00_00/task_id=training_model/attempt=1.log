@@ -1,0 +1,80 @@
+[2022-10-21 16:36:54,394] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: Lead_scoring_training_pipeline.training_model manual__2022-10-21T16:36:43.718659+00:00 [queued]>
+[2022-10-21 16:36:54,399] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: Lead_scoring_training_pipeline.training_model manual__2022-10-21T16:36:43.718659+00:00 [queued]>
+[2022-10-21 16:36:54,399] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-21 16:36:54,399] {taskinstance.py:1377} INFO - Starting attempt 1 of 2
+[2022-10-21 16:36:54,399] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-21 16:36:54,407] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): training_model> on 2022-10-21 16:36:43.718659+00:00
+[2022-10-21 16:36:54,414] {standard_task_runner.py:52} INFO - Started process 3600 to run task
+[2022-10-21 16:36:54,421] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'Lead_scoring_training_pipeline', 'training_model', 'manual__2022-10-21T16:36:43.718659+00:00', '--job-id', '66', '--raw', '--subdir', 'DAGS_FOLDER/Lead_scoring_training_pipeline/.ipynb_checkpoints/lead_scoring_training_pipeline-checkpoint.py', '--cfg-path', '/tmp/tmpxsnwp1eh', '--error-file', '/tmp/tmp9lm0ap5z']
+[2022-10-21 16:36:54,421] {standard_task_runner.py:80} INFO - Job 66: Subtask training_model
+[2022-10-21 16:36:54,471] {task_command.py:371} INFO - Running <TaskInstance: Lead_scoring_training_pipeline.training_model manual__2022-10-21T16:36:43.718659+00:00 [running]> on host 2e24bcea55eb
+[2022-10-21 16:36:54,518] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=Lead_scoring_training_pipeline
+AIRFLOW_CTX_TASK_ID=training_model
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-21T16:36:43.718659+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-10-21T16:36:43.718659+00:00
+[2022-10-21 16:36:56,115] {taskinstance.py:1909} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/opt/conda/lib/python3.8/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/home/airflow/dags/Lead_scoring_training_pipeline/utils.py", line 144, in get_trained_model
+    with mlflow.start_run(run_name=experiment) as mlrun:
+  File "/opt/conda/lib/python3.8/site-packages/mlflow/tracking/fluent.py", line 318, in start_run
+    active_run_obj = client.create_run(experiment_id=exp_id_for_run, tags=resolved_tags)
+  File "/opt/conda/lib/python3.8/site-packages/mlflow/tracking/client.py", line 265, in create_run
+    return self._tracking_client.create_run(experiment_id, start_time, tags)
+  File "/opt/conda/lib/python3.8/site-packages/mlflow/tracking/_tracking_service/client.py", line 99, in create_run
+    return self.store.create_run(
+  File "/opt/conda/lib/python3.8/site-packages/mlflow/store/tracking/rest_store.py", line 170, in create_run
+    response_proto = self._call_endpoint(CreateRun, req_body)
+  File "/opt/conda/lib/python3.8/site-packages/mlflow/store/tracking/rest_store.py", line 56, in _call_endpoint
+    return call_endpoint(self.get_host_creds(), endpoint, method, json_body, response_proto)
+  File "/opt/conda/lib/python3.8/site-packages/mlflow/utils/rest_utils.py", line 256, in call_endpoint
+    response = verify_rest_response(response, endpoint)
+  File "/opt/conda/lib/python3.8/site-packages/mlflow/utils/rest_utils.py", line 191, in verify_rest_response
+    raise MlflowException("%s. Response body: '%s'" % (base_msg, response.text))
+mlflow.exceptions.MlflowException: API request to endpoint /api/2.0/mlflow/runs/create failed with error code 404 != 200. Response body: '
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Airflow 404</title>
+    <link rel="icon" type="image/png" href="/static/pin_32.png">
+  </head>
+  <body>
+    <div style="font-family: verdana; text-align: center; margin-top: 200px;">
+      <img src="/static/pin_100.png" width="50px" alt="pin-logo" />
+      <h1>Airflow 404</h1>
+      <p>Page cannot be found.</p>
+      <a href="/">Return to the main page</a>
+      <p>2e24bcea55eb</p>
+    </div>
+  </body>
+</html>'
+[2022-10-21 16:36:56,127] {taskinstance.py:1415} INFO - Marking task as UP_FOR_RETRY. dag_id=Lead_scoring_training_pipeline, task_id=training_model, execution_date=20221021T163643, start_date=20221021T163654, end_date=20221021T163656
+[2022-10-21 16:36:56,134] {standard_task_runner.py:92} ERROR - Failed to execute job 66 for task training_model (API request to endpoint /api/2.0/mlflow/runs/create failed with error code 404 != 200. Response body: '
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Airflow 404</title>
+    <link rel="icon" type="image/png" href="/static/pin_32.png">
+  </head>
+  <body>
+    <div style="font-family: verdana; text-align: center; margin-top: 200px;">
+      <img src="/static/pin_100.png" width="50px" alt="pin-logo" />
+      <h1>Airflow 404</h1>
+      <p>Page cannot be found.</p>
+      <a href="/">Return to the main page</a>
+      <p>2e24bcea55eb</p>
+    </div>
+  </body>
+</html>'; 3600)
+[2022-10-21 16:36:56,153] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-10-21 16:36:56,176] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
